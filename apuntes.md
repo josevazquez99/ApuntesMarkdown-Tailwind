@@ -34,20 +34,64 @@ Ideal para proyectos donde necesitas **agilidad** y consistencia en los estilos.
 
 ## 🚀 **Cómo empezar con Tailwind CSS**
 
-1. Abre tu terminal y ejecuta:
-   - `npm install -D tailwindcss`
-2. Genera tu archivo de configuración con:
-   - `npx tailwindcss init`
-3. En tu archivo `tailwind.config.js`, añade el siguiente código:
+1.Configura tu proyecto:
+   - `mkdir nombreProyecto`
+   - `cd nombreProyecto`
+   - `npm init -y`
+2. Instala Tailwind CSS:
+   - `npm install -D tailwindcss postcss autoprefixer`
+3. Crea los archivos de configuración:
+   - `npx tailwindcss init -p`
+4. Configura Tailwind:
 
 ```js
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}", "./public/*.html"],
-  theme: { extend: {} },
+  content: ['./src/**/*.{html,js}'],
+  theme: {
+    extend: {},
+  },
   plugins: [],
-}; 
+}
+```
+5. Crea tu archivo CSS:
+Crea una carpeta llamada src y dentro de ella, un archivo CSS (por ejemplo, styles.css). Añade las directivas de Tailwind al archivo:
+   - @tailwind base;
+   - @tailwind components;
+   - @tailwind utilities;
+6. Compila Tailwind CSS:
+Agrega un script en el package.json para compilar Tailwind:
+```js
+"scripts": {
+  "build": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch"
+}
 
 ```
+7. Crea tu archivo HTML:
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/styles.css" rel="stylesheet">
+    <title>Mi Proyecto con Tailwind</title>
+</head>
+<body>
+    <h1 class="text-3xl font-bold">¡Hola, Tailwind!</h1>
+</body>
+</html>
+
+8. Ejecuta el script de compilación:
+   -`npm run build`
+
+
+
+
+
+
+
+
+
 ---
 
 ## **Ejemplos de Uso**
