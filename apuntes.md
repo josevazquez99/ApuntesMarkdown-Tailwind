@@ -68,6 +68,7 @@ Agrega un script en el package.json para compilar Tailwind:
 
 ```
 7. Crea tu archivo HTML:
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -80,16 +81,9 @@ Agrega un script en el package.json para compilar Tailwind:
     <h1 class="text-3xl font-bold">¡Hola, Tailwind!</h1>
 </body>
 </html>
-
+```
 8. Ejecuta el script de compilación:
    -`npm run build`
-
-
-
-
-
-
-
 
 
 ---
